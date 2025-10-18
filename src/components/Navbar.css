@@ -1,0 +1,150 @@
+/* Navbar.css
+   A stylish, responsive, and simple design for a real estate website header.
+*/
+
+/* ===== Navbar Container ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #111;
+  color: white;
+  padding: 0.8rem 2rem;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Logo ===== */
+.navbar-logo h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #00bcd4;
+  letter-spacing: 1px;
+}
+
+/* ===== Nav Links ===== */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1.8rem;
+  transition: all 0.3s ease;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: #ddd;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: #00bcd4;
+}
+
+/* ===== Search Bar ===== */
+.navbar-search {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0 1rem;
+}
+
+.navbar-search input {
+  width: 60%;
+  max-width: 350px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #222;
+  color: #eee;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.navbar-search input:focus {
+  background: #333;
+  outline: 1px solid #00bcd4;
+}
+
+/* ===== User Section ===== */
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.navbar-user p {
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00bcd4;
+}
+
+/* ===== Hamburger Menu (for mobile) ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 25px;
+  height: 20px;
+  justify-content: space-between;
+}
+
+.hamburger span {
+  background: white;
+  height: 3px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* ===== Responsive (Mobile) ===== */
+@media (max-width: 900px) {
+  .navbar-search {
+    display: none; /* hide search bar on small screens */
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #111;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1rem 0;
+    display: none;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-user p {
+    display: none; /* hide text on small screens */
+  }
+}
