@@ -1,16 +1,21 @@
-# React + Vite
+# LandmarkLoft
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, full-featured real estate marketplace built with React, offering complete CRUD functionality for managing property listings. Ideal for agents and buyers, the app includes advanced search, filtering by price, location, bedrooms, and bathrooms, property detail pages with image sliders, and map integration (e.g., Google Maps or Leaflet). Admins can create, update, and delete listings, while users can browse, favorite, and inquire about properties.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-CRUD Operations: Full create, read, update, and delete support for property listings
 
-## React Compiler
+-Advanced Search & Filters: Sort by price, size, location, and amenities
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+-Responsive Design: Fully mobile-friendly interface
 
-## Expanding the ESLint configuration
+-Image Gallery: High-quality image sliders for each listing
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+-Map Integration: Interactive maps to visualize property locations
+
+-Favorite Properties: User bookmarking system
+
+-Inquiry System: Contact form for property inquiries
+
+-Admin Dashboard: Secure interface for managing listings
