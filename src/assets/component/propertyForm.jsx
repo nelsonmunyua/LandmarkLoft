@@ -174,7 +174,7 @@ const PropertyForm = ({ onSubmit }) => {
         />
       </label>
 
-      {/* Property Type Dropdown */}
+      {/* Property Type Dropdown. */}
       <label>
         Property Type:
         <select
