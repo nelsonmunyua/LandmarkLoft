@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+// PropertyForm.js
 
-// Initial state structure for the form data
+import React, { useState } from 'react';
+import './PropertyForm.css'; // Importing external CSS
+
+// Initial form state with default values
 const initialState = {
   title: '',
   description: '',
@@ -11,8 +14,8 @@ const initialState = {
   bedrooms: '',
   bathrooms: '',
   squareFootage: '',
-  propertyType: 'house',   // Default selected option
-  status: 'sale',          // Default listing status
+  propertyType: 'house', // Default value
+  status: 'sale',        // Default value
   features: {
     garage: false,
     pool: false,
@@ -20,35 +23,37 @@ const initialState = {
     balcony: false,
   },
   availabilityDate: '',
-  images: [],               // Holds selected image files
+  images: [], // Image files will be stored here
 };
 
-// PropertyForm component receives an optional onSubmit function prop
+// Main component
 const PropertyForm = ({ onSubmit }) => {
-  const [formData, setFormData] = useState(initialState); // Form state management
+  const [formData, setFormData] = useState(initialState); // State to track form input
 
-  // Generic input change handler for form fields
+  // Handle all form input changes
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value, type, checked, files } = e.target;
 
-    // If the input is one of the feature checkboxes
+    // Handle checkboxes (features)
     if (name in formData.features) {
       setFormData((prev) => ({
         ...prev,
         features: {
           ...prev.features,
-          [name]: checked, // true/false based on checkbox status
+          [name]: checked,
         },
       }));
     }
-    // If the input is for file upload (images)
+
+    // Handle file uploads (images)
     else if (type === 'file') {
       setFormData((prev) => ({
         ...prev,
-        images: Array.from(e.target.files), // Convert FileList to array
+        images: Array.from(files), // Convert FileList to array
       }));
     }
-    // Regular text/number/date input
+
+    // Handle all other inputs
     else {
       setFormData((prev) => ({
         ...prev,
@@ -57,17 +62,17 @@ const PropertyForm = ({ onSubmit }) => {
     }
   };
 
-  // Handle form submission
+  // Form submission handler
   const handleSubmit = (e) => {
-    e.preventDefault();       // Prevent page refresh
-    onSubmit?.(formData);     // Call parent's onSubmit function if provided
+    e.preventDefault(); // Prevent page reload
+    onSubmit?.(formData); // Call the parent submit function if passed
   };
 
   return (
     <form onSubmit={handleSubmit} className="property-form">
       <h2>Add / Edit Property</h2>
 
-      {/* Property Title */}
+      {/* Title */}
       <label>
         Title:
         <input
@@ -79,7 +84,7 @@ const PropertyForm = ({ onSubmit }) => {
         />
       </label>
 
-      {/* Property Description */}
+      {/* Description */}
       <label>
         Description:
         <textarea
@@ -90,7 +95,7 @@ const PropertyForm = ({ onSubmit }) => {
         />
       </label>
 
-      {/* Property Price */}
+      {/* Price */}
       <label>
         Price:
         <input
@@ -102,7 +107,7 @@ const PropertyForm = ({ onSubmit }) => {
         />
       </label>
 
-      {/* Property Address */}
+      {/* Address */}
       <label>
         Address:
         <input
@@ -138,7 +143,7 @@ const PropertyForm = ({ onSubmit }) => {
         />
       </label>
 
-      {/* Number of Bedrooms */}
+      {/* Bedrooms */}
       <label>
         Bedrooms:
         <input
@@ -150,7 +155,7 @@ const PropertyForm = ({ onSubmit }) => {
         />
       </label>
 
-      {/* Number of Bathrooms */}
+      {/* Bathrooms */}
       <label>
         Bathrooms:
         <input
@@ -162,7 +167,7 @@ const PropertyForm = ({ onSubmit }) => {
         />
       </label>
 
-      {/* Total Square Footage */}
+      {/* Square Footage */}
       <label>
         Square Footage:
         <input
@@ -174,7 +179,7 @@ const PropertyForm = ({ onSubmit }) => {
         />
       </label>
 
-      {/* Property Type Dropdown. */}
+      {/* Property Type (select dropdown) */}
       <label>
         Property Type:
         <select
@@ -188,7 +193,7 @@ const PropertyForm = ({ onSubmit }) => {
         </select>
       </label>
 
-      {/* Listing Status Dropdown */}
+      {/* Status (For sale or rent) */}
       <label>
         Status:
         <select
@@ -201,7 +206,7 @@ const PropertyForm = ({ onSubmit }) => {
         </select>
       </label>
 
-      {/* Property Features as Checkboxes */}
+      {/* Features (checkboxes) */}
       <fieldset>
         <legend>Features:</legend>
         {Object.keys(formData.features).map((feature) => (
@@ -212,7 +217,6 @@ const PropertyForm = ({ onSubmit }) => {
               checked={formData.features[feature]}
               onChange={handleChange}
             />
-            {/* Capitalize feature nSame */}
             {feature.charAt(0).toUpperCase() + feature.slice(1)}
           </label>
         ))}
@@ -229,7 +233,7 @@ const PropertyForm = ({ onSubmit }) => {
         />
       </label>
 
-      {/* Upload Images */}
+      {/* Image Upload */}
       <label>
         Images:
         <input
