@@ -212,7 +212,7 @@ const PropertyForm = ({ onSubmit }) => {
               checked={formData.features[feature]}
               onChange={handleChange}
             />
-            {/* Capitalize feature name */}
+            {/* Capitalize feature nSame */}
             {feature.charAt(0).toUpperCase() + feature.slice(1)}
           </label>
         ))}
