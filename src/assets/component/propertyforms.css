@@ -1,0 +1,92 @@
+/* PropertyForm.css */
+
+/* Container styling */
+.property-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Heading styling */
+.property-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Label styling */
+.property-form label {
+  display: block;
+  margin-bottom: 1rem;
+  color: #444;
+  font-weight: 500;
+}
+
+/* Text, number, date, file input, textarea, and select styling */
+.property-form input[type="text"],
+.property-form input[type="number"],
+.property-form input[type="date"],
+.property-form input[type="file"],
+.property-form textarea,
+.property-form select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Make textarea resizable */
+.property-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Fieldset styling for features */
+.property-form fieldset {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+/* Legend for features section */
+.property-form fieldset legend {
+  padding: 0 0.5rem;
+  font-weight: bold;
+}
+
+/* Checkbox label styling */
+.property-form fieldset label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Submit button styling */
+.property-form button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1.5rem;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.property-form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
