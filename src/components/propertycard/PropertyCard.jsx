@@ -9,6 +9,8 @@ export default function PropertyCard() {
       <img
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlu6DGo9rD_5Ypmuctli8uge_VwDRVpJvC1g&s"
         alt="property image"
+        height={1}
+        width={5}
         className="property-image"
       />
 

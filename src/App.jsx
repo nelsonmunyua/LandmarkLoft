@@ -1,4 +1,4 @@
-import PropertyCard from "./components/PropertyCard"
+import PropertyCard from "./components/propertycard/PropertyCard"
 
 
 function App() {
