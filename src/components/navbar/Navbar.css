@@ -1,0 +1,144 @@
+/* Navbar.css
+   Clean, responsive styling for the Navbar component.
+*/
+
+/*Base Navbar Container*/
+.navbar {
+  width: 100%;
+  height: 70px;
+  background-color: #111;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+/*Logo*/
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00bcd4;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+/*Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a {
+  color: #ddd;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #00bcd4;
+}
+/*Search Bar  */
+.nav-search {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-search input {
+  width: 60%;
+  max-width: 350px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  background-color: #222;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.nav-search input:focus {
+  outline: 1px solid #00bcd4;
+}
+/*User Section*/
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.nav-user p {
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.user-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00bcd4;
+}
+/*Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  background-color: white;
+  height: 3px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+/* Transformations when active */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(7px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-7px);
+}
+
+@media (max-width: 950px) {
+  .nav-search {
+    display: none; /* Hide search bar on mobile */
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: #111;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-user p {
+    display: none;
+  }
+}
