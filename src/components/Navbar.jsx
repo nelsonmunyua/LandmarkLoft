@@ -1,23 +1,20 @@
 // Navbar.jsx
-// A clean, responsive, and modern navigation bar component.
-// Includes logo, navigation links, search bar, and user profile avatar.
+// Works with React Router if you replace <a> with <Link> later.
 
 import React, { useState } from "react";
 import "./Navbar.css";
 
 function Navbar() {
-  // State to toggle mobile menu visibility
-  const [menuOpen, setMenuOpen] = useState(false);
+  // Toggle state for the mobile hamburger menu
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="navbar">
       {/*Left Section: Logo */}
-      <div className="navbar-logo">
-        <h2>Urbanün</h2>
-      </div>
+      <div className="nav-logo">Urbanün</div>
 
-      {/*Center Section: Nav Links (hidden on mobile) */}
-      <ul className={`navbar-links ${menuOpen ? "active" : ""}`}>
+      {/*Center Section: Links*/}
+      <ul className={`nav-links ${isOpen ? "open" : ""}`}>
         <li>
           <a href="#">For Sale</a>
         </li>
@@ -35,28 +32,25 @@ function Navbar() {
         </li>
       </ul>
 
-      {/*Center Search Bar (desktop only) */}
-      <div className="navbar-search">
-        <input
-          type="text"
-          placeholder="Search by location, price, or type..."
-        />
+      {/*Center: Search Bar (desktop only)*/}
+      <div className="nav-search">
+        <input type="text" placeholder="Search by location or price..." />
       </div>
 
-      {/*Right Section: User Info */}
-      <div className="navbar-user">
-        <p>Hi, Welcome User !</p>
+      {/*Right Section: User Profile*/}
+      <div className="nav-user">
+        <p>Hi, Jimmy!</p>
         <img
           src="https://via.placeholder.com/35"
-          alt="User avatar"
+          alt="user avatar"
           className="user-avatar"
         />
       </div>
 
-      {/*Hamburger Icon (mobile only)*/}
+      {/*Mobile Hamburger Menu */}
       <div
-        className={`hamburger ${menuOpen ? "open" : ""}`}
-        onClick={() => setMenuOpen(!menuOpen)}
+        className={`hamburger ${isOpen ? "active" : ""}`}
+        onClick={() => setIsOpen(!isOpen)}
       >
         <span></span>
         <span></span>
