@@ -1,5 +1,5 @@
 import React from 'react'
-import"./PropertCard.css"
+import"./PropertyCard.css"
 
 export default function PropertyCard({ property }) {
     const { image, title, location, price, bedrooms, bathrooms } = property;

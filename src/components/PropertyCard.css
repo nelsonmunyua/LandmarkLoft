@@ -1,0 +1,74 @@
+/* Container for the entire card */
+.propety-card {
+  width: 300px;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.propety-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Image section */
+.property-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Info section */
+.property-info {
+  padding: 16px;
+}
+
+.property-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.property-location {
+  font-size: 0.95rem;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+/* Price styling */
+.property-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2b7a78;
+  margin-bottom: 12px;
+}
+
+/* Bedrooms & Bathrooms */
+.property-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #555;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.property-details span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Responsive behavior */
+@media (max-width: 600px) {
+  .propety-card {
+    width: 100%;
+  }
+
+  .property-image {
+    height: 180px;
+  }
+}
