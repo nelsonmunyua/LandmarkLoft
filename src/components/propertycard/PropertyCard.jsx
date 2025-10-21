@@ -1,30 +1,26 @@
-import React from 'react'
-import"./PropertyCard.css"
-
+import React from "react";
+import "./PropertyCard.css";
 export default function PropertyCard() {
-   
-
   return (
     <div className="property-card">
+      {" "}
       <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlu6DGo9rD_5Ypmuctli8uge_VwDRVpJvC1g&s"
-        alt="property image"
-        height={1}
-        width={5}
+        src="https://sailgloberesourceltd.com/wp-content/uploads/2022/09/IMG-20220915-WA0004.jpg"
+        alt="property"
         className="property-image"
-      />
-
+      />{" "}
       <div className="property-info">
-        <h3>Olive Properies</h3>
-        <p className="property-location">Nairobi</p>
-        <p className="property-price">$70,000</p>
-
+        {" "}
+        <div>Title:</div> <h3>Olive Properties</h3> <div>Location:</div>{" "}
+        <p className="property-location">Nairobi</p> <div>Price:</div>{" "}
+        <p className="property-price">$1,000,000</p> <div>Status:</div>{" "}
+        <p className="property-status">For Sale</p> <div>Type:</div>{" "}
+        <p className="property-type">Villa</p>{" "}
         <div className="property-details">
-          <span>4 bedrooms</span>
-          <div></div>
-          <span>3 bathrooms </span>
-        </div>
-      </div>
+          {" "}
+          <span>Bedrooms: 5</span> <span>Bathrooms: 3</span>{" "}
+        </div>{" "}
+      </div>{" "}
     </div>
   );
 }

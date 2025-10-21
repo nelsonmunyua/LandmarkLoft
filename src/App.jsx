@@ -1,14 +1,11 @@
-import PropertyCard from "./components/propertycard/PropertyCard"
-
+import PropertyCard from "./components/propertycard/PropertyCard";
 
 function App() {
-  
-
   return (
     <>
-      <PropertyCard/>
+      <PropertyCard />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
