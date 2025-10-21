@@ -1,14 +1,10 @@
 import React from 'react'
-import PropertyDetails from './components/propertydetails/PropertyDetails'
-import Navbar from "./components/navbar/Navbar";
-import Filter from './components/filter/filter';
+import HomePage from './pages/HomePage'
 
 function App() {
   return (
     <>
-    <Filter />
-    <Navbar/>
-      <PropertyDetails />
+    <HomePage /> 
     </>
   )
 }
