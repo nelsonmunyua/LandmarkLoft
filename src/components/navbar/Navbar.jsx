@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 
+
 function Navbar() {
   // Toggle state for the mobile hamburger menu
   const [isOpen, setIsOpen] = useState(false);
