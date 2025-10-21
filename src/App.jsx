@@ -1,17 +1,16 @@
-import React from "react";
-import PropertyDetails from "./components/propertydetails/PropertyDetails";
-import Navbar from "./components/navbar/Navbar";
-import Filter from "./components/filter/filter";
-import PropertyList from "./components/propertylist/PropertyList";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import About from "./pages/about/About";
 
 function App() {
   return (
-    <>
-      <Filter />
-      <Navbar />
-      <PropertyDetails />
-      <PropertyList />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
   );
 }
 

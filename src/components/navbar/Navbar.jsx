@@ -3,6 +3,8 @@
 
 import React, { useState } from "react";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
+
 
 function Navbar() {
   // Toggle state for the mobile hamburger menu
@@ -27,8 +29,11 @@ function Navbar() {
         <li>
           <a href="#">Sell</a>
         </li>
+        {/* About link now uses React Router */}
         <li>
-          <a href="#">About</a>
+          <Link to="/about" onClick={() => setIsOpen(false)}>
+            About
+          </Link>
         </li>
       </ul>
 
