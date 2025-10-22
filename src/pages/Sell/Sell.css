@@ -1,0 +1,72 @@
+.sell-container {
+  padding: 40px;
+  background: #f2f6fc;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.back-btn {
+  background: transparent;
+  border: none;
+  color: #444;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: color 0.3s;
+}
+.back-btn:hover {
+  color: #007bff;
+}
+
+.sell-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+}
+
+.sell-intro {
+  text-align: center;
+  color: #666;
+  margin: 10px 0 30px;
+}
+
+.sell-form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.sell-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.sell-form input,
+.sell-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.sell-form button {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.sell-form button:hover {
+  background: #0056b3;
+}
