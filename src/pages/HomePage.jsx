@@ -1,8 +1,10 @@
 import React from "react";
 import Navbar from "../components/navbar/Navbar";
 import Filter from "../components/filter/filter";
-import PropertyDetails from "../components/propertydetails/PropertyDetails";
-//import "./homepage.css";
+import PropertyList from "../components/propertylist/PropertyList";
+// import PropertyDetails from "../components/propertydetails/PropertyDetails";
+import "./homepage.css";
+
 
 export default function HomePage() {
   return (
@@ -14,7 +16,7 @@ export default function HomePage() {
           </aside>
 
         <main className="properties-area">
-          <PropertyDetails />
+          <PropertyList />
           </main>
       </div>
     </div>

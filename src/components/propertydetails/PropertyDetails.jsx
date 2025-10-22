@@ -1,18 +1,16 @@
 import React from "react";
 import "./style.css";
 import { Heart, Share2, BedDouble, Bath, Car, Ruler } from "lucide-react";
+import PropertyCard from "../propertcard/PropertyCard";
 
-export default function PropertyDetails() {
+export default function PropertyDetails({ properties }) {
   return (
     <div className="details-card">
       {/* LEFT SIDE */}
       <div className="details-section">
         {/* Main image */}
         <div className="main-image-wrapper">
-          <img
-            src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=900"
-            alt="Property"
-          />
+          <img src={properties.image} alt={properties.tittle}/>
           <span className="status-badge">Under Contract</span>
           <button className="view-photos">View all 12 Photos</button>
         </div>
