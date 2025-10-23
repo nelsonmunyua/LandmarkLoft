@@ -1,51 +1,90 @@
 import React from "react";
 import "./About.css";
+import { useNavigate } from "react-router-dom";
 
-function About() {
+const About = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="about-container">
+      {/* Back Button */}
+      <button className="back-btn" onClick={() => navigate(-1)}>
+        ←
+      </button>
+
       {/* Hero Section */}
       <header className="about-hero">
-        <h1>About Our Real Estate Platform</h1>
+        <h1>About Urbanün Real Estate</h1>
         <p>
-          We make it easier for you to find, buy, and sell properties with
-          confidence and transparency.
+          Connecting people to their dream homes with transparency, trust, and
+          technology.
         </p>
       </header>
 
       {/* Mission Section */}
-      <section className="about-section">
-        <h2>Our Mission</h2>
+      <section className="about-card">
+        <h2>🎯 Our Mission</h2>
         <p>
-          Our mission is to simplify the real estate process by providing a
-          modern, user-friendly, and transparent platform for property listings.
-          Whether you’re looking to buy, sell, or rent, our platform connects
-          you with the right people at the right time.
+          At <strong>Urbanün</strong>, our mission is to simplify the real
+          estate process. We use modern digital tools to make it easier for you
+          to buy, sell, or rent properties with confidence and clarity.
         </p>
       </section>
 
-      {/* What We Offer Section */}
-      <section className="about-section">
-        <h2>What We Offer</h2>
+      {/* Vision Section */}
+      <section className="about-card">
+        <h2>🌍 Our Vision</h2>
+        <p>
+          We envision a connected real estate world where every property
+          transaction is smooth, verified, and stress-free. Whether you’re a
+          first-time buyer or an investor, we’re here to make your journey
+          seamless.
+        </p>
+      </section>
+
+      {/* Values Section */}
+      <section className="about-card">
+        <h2>💡 Our Values</h2>
         <ul>
-          <li>Easy property listing and management tools</li>
-          <li>Smart filters to find properties by price, size, and location</li>
-          <li>Secure and verified listings</li>
-          <li>Fast and responsive customer support</li>
+          <li>Integrity and Transparency</li>
+          <li>Customer-Centered Innovation</li>
+          <li>Speed and Reliability</li>
+          <li>Data-Driven Insights</li>
         </ul>
       </section>
 
       {/* Team Section */}
-      <section className="about-section">
-        <h2>Meet Our Team</h2>
-        <p>
-          Our team is made up of passionate developers, designers, and real
-          estate experts working together to bring you the best property
-          experience possible.
-        </p>
+      <section className="team-section">
+        <h2>🤝 Meet Our Team</h2>
+        <div className="team-grid">
+          <div className="team-member">
+            <img
+              src="https://randomuser.me/api/portraits/men/45.jpg"
+              alt="Team member"
+            />
+            <h3>Nelson</h3>
+            <p>Lead Developer</p>
+          </div>
+          <div className="team-member">
+            <img
+              src="https://randomuser.me/api/portraits/women/46.jpg"
+              alt="Team member"
+            />
+            <h3>Sumeya</h3>
+            <p>Real Estate Expert</p>
+          </div>
+          <div className="team-member">
+            <img
+              src="https://randomuser.me/api/portraits/men/47.jpg" 
+              alt="Team member"
+            />
+            <h3>Julius</h3>
+            <p>UI/UX Designer</p>
+          </div>
+        </div>
       </section>
     </div>
   );
-}
+};
 
 export default About;
