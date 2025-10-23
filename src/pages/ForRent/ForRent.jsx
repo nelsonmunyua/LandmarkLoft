@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./ForRent.css";
 import { useNavigate } from "react-router-dom";
 
+
 const ForRent = () => {
   const [properties, setProperties] = useState([]);
   const navigate = useNavigate();
