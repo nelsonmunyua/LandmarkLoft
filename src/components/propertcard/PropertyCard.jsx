@@ -24,7 +24,7 @@ export default function PropertyCard({ property }) {
         <span className={`property-badge ${type}`}>
           {type}
         </span>
-        {project && (
+        {property.project && (
           <span className="property-project">{project}</span>
         )}
       </div>

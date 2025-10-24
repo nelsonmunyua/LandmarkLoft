@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PropertyCard from "../../components/propertcard/PropertyCard";
 import "./ForSale.css";
 import { useNavigate } from "react-router-dom";
 
@@ -25,28 +26,9 @@ const ForSale = () => {
 
       <div className="property-grid">
         {properties.map((property) => (
-          <div key={property.id} className="property-card">
-            <img
-              src={
-                property.image
-                  ? property.image
-                  : "https://via.placeholder.com/400x250?text=No+Image"
-              }
-              alt={property.title}
-              className="property-image"
-            />
-            <div className="property-info">
-              <h2>{property.title}</h2>
-              <p className="price">KSh {property.price.toLocaleString()}</p>
-              <p className="location">{property.location}</p>
-              <p className="desc">{property.description}</p>
-              <div className="details">
-                <span>🛏 {property.bedrooms} Beds</span>
-                <span>🛁 {property.bathrooms} Baths</span>
-                <span>📏 {property.size_sqm} sqm</span>
-              </div>
-            </div>
-          </div>
+          
+          <PropertyCard key={property.id} property={property}/>
+
         ))}
       </div>
     </div>

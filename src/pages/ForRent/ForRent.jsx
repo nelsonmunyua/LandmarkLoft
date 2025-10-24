@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./ForRent.css";
+import PropertyCard from "../../components/propertcard/PropertyCard";
 import { useNavigate } from "react-router-dom";
 
 
@@ -26,29 +27,7 @@ const ForRent = () => {
 
       <div className="property-grid">
         {properties.map((property) => (
-          <div key={property.id} className="property-card">
-            <img
-              src={
-                property.image ||
-                "https://via.placeholder.com/400x250?text=No+Image"
-              }
-              alt={property.title}
-              className="property-image"
-            />
-            <div className="property-info">
-              <h2>{property.title}</h2>
-              <p className="price">
-                KSh {property.price.toLocaleString()} / month
-              </p>
-              <p className="location">{property.location}</p>
-              <p className="desc">{property.description}</p>
-              <div className="details">
-                <span>🛏 {property.bedrooms} Beds</span>
-                <span>🛁 {property.bathrooms} Baths</span>
-              </div>
-              <button className="details-btn">View Details</button>
-            </div>
-          </div>
+         <PropertyCard key={property.id} property={property} />
         ))}
       </div>
     </div>
