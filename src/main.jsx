@@ -31,8 +31,16 @@ const routes = createBrowserRouter([
     element: <ForSale />,
   },
   {
+    path: "/forsale/property/:id",
+    element: <PropertyDetails />,
+  },
+  {
     path: "/forrent",
     element: <ForRent />,
+  },
+  {
+    path: "/forrent/property/:id",
+    element: <PropertyDetails />
   },
   {
     path: "/projects",
