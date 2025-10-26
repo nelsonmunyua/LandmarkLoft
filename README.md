@@ -1,24 +1,63 @@
 # LandmarkLoft
 
-A modern, full-featured real estate marketplace built with React, offering complete CRUD functionality for managing property listings. Ideal for agents and buyers, the app includes advanced search, filtering by price, location, bedrooms, and bathrooms, property detail pages with image sliders, and map integration (e.g., Google Maps or Leaflet). Admins can create, update, and delete listings, while users can browse, favorite, and inquire about properties.
+A modern React application for browsing and viewing property listings, built with Vite and React Router.
+
+## Description
+
+LandmarkLoft is a web application designed to showcase property listings with detailed views, filtering options, and a user-friendly interface. It features a homepage with property cards, detailed property pages, and navigation components.
 
 ## Features
 
--CRUD Operations: Full create, read, update, and delete support for property listings
+- **Property Listings**: Browse through a list of properties with cards displaying key information.
+- **Property Details**: View detailed information about individual properties.
+- **Filtering**: Filter properties based on various criteria.
+- **Responsive Design**: Optimized for desktop and mobile devices.
+- **Navigation**: Easy navigation between pages using React Router.
 
--Advanced Search & Filters: Sort by price, size, location, and amenities
+## Installation
 
--Responsive Design: Fully mobile-friendly interface
+1. Clone the repository:
 
--Image Gallery: High-quality image sliders for each listing
+   ```bash
+   git clone <repository-url>
+   cd landmarkloft
+   ```
 
--Map Integration: Interactive maps to visualize property locations
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
--Favorite Properties: User bookmarking system
+## Usage
 
--Inquiry System: Contact form for property inquiries
+To start the development server:
 
--Admin Dashboard: Secure interface for managing listings
+```bash
+npm run dev
+```
+
+Open your browser and navigate to `http://localhost:5173` (or the port specified by Vite).
+
+## Scripts
+
+- `npm run dev`: Start the development server.
+- `npm run build`: Build the project for production.
+- `npm run lint`: Run ESLint to check for code issues.
+- `npm run preview`: Preview the production build locally.
+
+## Dependencies
+
+- **React**: ^19.1.1
+- **React DOM**: ^19.1.1
+- **React Router DOM**: ^7.9.4
+- **Lucide React**: ^0.546.0
+
+## Dev Dependencies
+
+- **Vite**: ^7.1.7
+- **ESLint**: ^9.36.0
+- **@vitejs/plugin-react**: ^5.0.4
+- And more...
 
 ## Contributors
 
@@ -26,5 +65,9 @@ A modern, full-featured real estate marketplace built with React, offering compl
 - Adonis
 - Julius
 - Mark
-- Suneya
 - Esther
+- Suneya
+
+## License
+
+This project is private and not licensed for public use.
