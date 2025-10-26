@@ -1,21 +1,117 @@
 # LandmarkLoft
 
-A modern, full-featured real estate marketplace built with React, offering complete CRUD functionality for managing property listings. Ideal for agents and buyers, the app includes advanced search, filtering by price, location, bedrooms, and bathrooms, property detail pages with image sliders, and map integration (e.g., Google Maps or Leaflet). Admins can create, update, and delete listings, while users can browse, favorite, and inquire about properties.
+A modern React-based property listing website for browsing and viewing properties in Nairobi, Kenya. Built with Vite for fast development and optimized performance.
 
 ## Features
 
--CRUD Operations: Full create, read, update, and delete support for property listings
+- **Property Listings**: Browse a variety of properties including apartments, houses, bungalows, and commercial spaces.
+- **Filtering**: Filter properties by type (sale/rent), category, location, and other criteria.
+- **Property Details**: View detailed information about each property, including images, descriptions, and specifications.
+- **Responsive Design**: Optimized for desktop and mobile devices.
+- **Routing**: Seamless navigation between pages using React Router.
 
--Advanced Search & Filters: Sort by price, size, location, and amenities
+## Tech Stack
 
--Responsive Design: Fully mobile-friendly interface
+- **Frontend**: React 19.1.1
+- **Routing**: React Router DOM 7.9.4
+- **Icons**: Lucide React 0.546.0
+- **Build Tool**: Vite 7.1.7
+- **Linting**: ESLint 9.36.0
+- **Styling**: CSS (custom stylesheets)
 
--Image Gallery: High-quality image sliders for each listing
+## Installation
 
--Map Integration: Interactive maps to visualize property locations
+1. **Clone the repository**:
 
--Favorite Properties: User bookmarking system
+   ```bash
+   git clone <repository-url>
+   cd LandmarkLoft
+   ```
 
--Inquiry System: Contact form for property inquiries
+2. **Install dependencies**:
 
--Admin Dashboard: Secure interface for managing listings
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**:
+
+   ```bash
+   npm run dev
+   ```
+
+   The app will be available at `http://localhost:5173` (default Vite port).
+
+4. **Build for production**:
+
+   ```bash
+   npm run build
+   ```
+
+5. **Preview the production build**:
+
+   ```bash
+   npm run preview
+   ```
+
+6. **Lint the code**:
+   ```bash
+   npm run lint
+   ```
+
+## Usage
+
+- Navigate to the homepage to view all property listings.
+- Use the filter sidebar to narrow down properties by type, category, location, etc.
+- Click on a property card to view detailed information.
+- The app uses mock data from `data/db.json` for demonstration purposes.
+
+## Project Structure
+
+```
+LandmarkLoft/
+├── public/
+│   └── vite.svg
+├── src/
+│   ├── assets/
+│   │   └── react.svg
+│   ├── components/
+│   │   ├── filter/
+│   │   │   ├── filter.css
+│   │   │   └── filter.jsx
+│   │   ├── navbar/
+│   │   │   ├── Navbar.css
+│   │   │   └── Navbar.jsx
+│   │   ├── propertycard/
+│   │   │   ├── propertycard.css
+│   │   │   └── PropertyCard.jsx
+│   │   ├── propertydetails/
+│   │   │   ├── PropertyDetails.jsx
+│   │   │   └── style.css
+│   │   └── propertylist/
+│   │       ├── propertylist.css
+│   │       └── PropertyList.jsx
+│   ├── pages/
+│   │   ├── homepage.css
+│   │   ├── HomePage.jsx
+│   │   └── about/
+│   │       ├── About.css
+│   │       └── About.jsx
+│   ├── App.jsx
+│   └── main.jsx
+├── data/
+│   └── db.json
+├── index.html
+├── package.json
+├── vite.config.js
+├── eslint.config.js
+└── README.md
+```
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes.
+
+## License
+
+This project is licensed under the MIT License.
