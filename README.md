@@ -19,99 +19,13 @@ A modern React-based property listing website for browsing and viewing propertie
 - **Linting**: ESLint 9.36.0
 - **Styling**: CSS (custom stylesheets)
 
-## Installation
+-Admin Dashboard: Secure interface for managing listings
 
-1. **Clone the repository**:
+## Contributors
 
-   ```bash
-   git clone <repository-url>
-   cd LandmarkLoft
-   ```
-
-2. **Install dependencies**:
-
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server**:
-
-   ```bash
-   npm run dev
-   ```
-
-   The app will be available at `http://localhost:5173` (default Vite port).
-
-4. **Build for production**:
-
-   ```bash
-   npm run build
-   ```
-
-5. **Preview the production build**:
-
-   ```bash
-   npm run preview
-   ```
-
-6. **Lint the code**:
-   ```bash
-   npm run lint
-   ```
-
-## Usage
-
-- Navigate to the homepage to view all property listings.
-- Use the filter sidebar to narrow down properties by type, category, location, etc.
-- Click on a property card to view detailed information.
-- The app uses mock data from `data/db.json` for demonstration purposes.
-
-## Project Structure
-
-```
-LandmarkLoft/
-├── public/
-│   └── vite.svg
-├── src/
-│   ├── assets/
-│   │   └── react.svg
-│   ├── components/
-│   │   ├── filter/
-│   │   │   ├── filter.css
-│   │   │   └── filter.jsx
-│   │   ├── navbar/
-│   │   │   ├── Navbar.css
-│   │   │   └── Navbar.jsx
-│   │   ├── propertycard/
-│   │   │   ├── propertycard.css
-│   │   │   └── PropertyCard.jsx
-│   │   ├── propertydetails/
-│   │   │   ├── PropertyDetails.jsx
-│   │   │   └── style.css
-│   │   └── propertylist/
-│   │       ├── propertylist.css
-│   │       └── PropertyList.jsx
-│   ├── pages/
-│   │   ├── homepage.css
-│   │   ├── HomePage.jsx
-│   │   └── about/
-│   │       ├── About.css
-│   │       └── About.jsx
-│   ├── App.jsx
-│   └── main.jsx
-├── data/
-│   └── db.json
-├── index.html
-├── package.json
-├── vite.config.js
-├── eslint.config.js
-└── README.md
-```
-
-## Contributing
-
-Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes.
-
-## License
-
-This project is licensed under the MIT License.
+- Nelson
+- Adonis
+- Julius
+- Mark
+- Suneya
+- Esther
