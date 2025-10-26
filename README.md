@@ -19,3 +19,12 @@ A modern, full-featured real estate marketplace built with React, offering compl
 -Inquiry System: Contact form for property inquiries
 
 -Admin Dashboard: Secure interface for managing listings
+
+## Contributors
+
+- Nelson
+- Adonis
+- Julius
+- Mark
+- Suneya
+- Esther
