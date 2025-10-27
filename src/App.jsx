@@ -6,13 +6,14 @@ import PropertyDetails from "./components/propertydetails/PropertyDetails";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/propertydetails" element={<PropertyDetails />} />
-        {/* <Route path="/about" element={<About />} /> */}
-      </Routes>
-    </Router>
+    // <Router>
+    //   <Routes>
+    //     <Route path="/" element={<HomePage />} />
+    //     <Route path="/propertydetails" element={<PropertyDetails />} />
+    //     {/* <Route path="/about" element={<About />} /> */}
+    //   </Routes>
+    // </Router>
+    <h1></h1>
   );
 }
 

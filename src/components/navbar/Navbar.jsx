@@ -4,8 +4,9 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import SearchBar from "../searchbar/SearchBar";
 
-function Navbar() {
+function Navbar({ properties, onSearch }) {
   // Toggle state for the mobile hamburger menu
   const [isOpen, setIsOpen] = useState(false);
 
@@ -45,7 +46,7 @@ function Navbar() {
 
       {/*Center: Search Bar (desktop only)*/}
       <div className="nav-search">
-        <input type="text" placeholder="Search by location or price..." />
+        <SearchBar properties={properties} onSearch={onSearch} />
       </div>
 
       {/*Right Section: User Profile*/}

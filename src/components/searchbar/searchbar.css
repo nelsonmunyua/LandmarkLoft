@@ -1,0 +1,32 @@
+.search-container {
+  position: relative;
+  width: 300px;
+}
+
+.search-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  right: 0;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 1000;
+}
+
+.search-dropdown-item {
+  padding: 10px;
+  background-color: #07020e; /* Gray background */
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+}
+
+.search-dropdown-item:hover {
+  background-color: #cccccc88;
+  color: #07020e;
+}   
