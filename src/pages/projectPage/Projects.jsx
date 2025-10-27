@@ -7,7 +7,7 @@ const Projects = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("/data/db.json")
+    fetch("http://localhost:3000/properties")
       .then((res) => res.json())
       .then((data) => {
         const filtered = data.filter((item) => item.category === "project");

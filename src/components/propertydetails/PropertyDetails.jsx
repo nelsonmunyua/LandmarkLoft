@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect }from "react";
 import { useParams, Link } from "react-router-dom";
 import {
   BedDouble,
@@ -8,14 +8,28 @@ import {
   Share2,
   ArrowLeft,
 } from "lucide-react";
-import data from "/data/db.json";
+
 import "./propertydetails.css";
 
 export default function PropertyDetails() {
+  // useState below fetches the property details
+  const [propertyDetails, setPropertyDetails] = useState(null);
   const { id } = useParams();
-  const property = data.find((p) => p.id === parseInt(id));
 
-  if (!property) {
+  useEffect(() => {
+    fetch("http://localhost:3000/properties")
+    .then((res) => res.json())
+    .then((data) => {
+      const property = data.find((p) => p.id === parseInt(id));
+      setPropertyDetails(property);
+    })
+    .catch((error) => {
+      console.error("Error fetching Property Details", error);
+    });
+  }, [id]); // the id dependancy makes the this useEffect run whenever the id changes
+
+
+  if (!PropertyDetails) {
     return (
       <div className="property-details-container">
         <p>Property not found.</p>
@@ -37,40 +51,40 @@ export default function PropertyDetails() {
         {/* IMAGE SECTION */}
         <div className="details-image-section">
           <img
-            src={property.image}
-            alt={property.title}
+            src={propertyDetails?.image}
+            alt={propertyDetails?.title}
             className="details-main-image"
           />
-          <span className={`property-badge ${property.type}`}>
-            {property.type}
+          <span className={`property-badge ${propertyDetails?.type}`}>
+            {propertyDetails?.type}
           </span>
-          {property.project && (
-            <span className="property-project">{property.project}</span>
+          {propertyDetails?.project && (
+            <span className="property-project">{propertyDetails?.project}</span>
           )}
         </div>
 
         {/* INFO SECTION */}
         <div className="details-info-section">
-          <h1 className="details-title">{property.title}</h1>
-          <p className="details-location">{property.location}</p>
+          <h1 className="details-title">{propertyDetails?.title}</h1>
+          <p className="details-location">{propertyDetails?.location}</p>
 
           <div className="details-icons">
             <div>
-              <BedDouble size={18} /> {property.bedrooms} Beds
+              <BedDouble size={18} /> {propertyDetails?.bedrooms} Beds
             </div>
             <div>
-              <Bath size={18} /> {property.bathrooms} Baths
+              <Bath size={18} /> {propertyDetails?.bathrooms} Baths
             </div>
             <div>
-              <Ruler size={18} /> {property.size_sqm} sqm
+              <Ruler size={18} /> {propertyDetails?.size_sqm} sqm
             </div>
           </div>
 
           <h2 className="details-price">
-            KSh {property.price.toLocaleString()}
+            KSh {propertyDetails?.price.toLocaleString()}
           </h2>
 
-          <p className="details-description">{property.description}</p>
+          <p className="details-description">{propertyDetails?.description}</p>
 
           <div className="details-actions">
             <button className="details-btn primary">

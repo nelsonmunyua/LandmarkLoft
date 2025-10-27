@@ -8,7 +8,7 @@ const ForSale = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("/data/db.json")
+    fetch("http://localhost:3000/properties")
       .then((res) => res.json())
       .then((data) => {
         const sales = data.filter((item) => item.type === "sale");

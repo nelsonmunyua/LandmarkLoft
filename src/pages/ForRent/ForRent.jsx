@@ -9,7 +9,7 @@ const ForRent = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("/data/db.json")
+    fetch("http://localhost:3000/properties")
       .then((res) => res.json())
       .then((data) => {
         const rentProps = data.filter((item) => item.type === "rent");
