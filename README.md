@@ -19,7 +19,17 @@ A modern React-based property listing website for browsing and viewing propertie
 - **Linting**: ESLint 9.36.0
 - **Styling**: CSS (custom stylesheets)
 
--Admin Dashboard: Secure interface for managing listings
+- **React**: ^19.1.1
+- **React DOM**: ^19.1.1
+- **React Router DOM**: ^7.9.4
+- **Lucide React**: ^0.546.0
+
+## Dev Dependencies
+
+- **Vite**: ^7.1.7
+- **ESLint**: ^9.36.0
+- **@vitejs/plugin-react**: ^5.0.4
+- And more...
 
 ## Contributors
 
@@ -27,5 +37,9 @@ A modern React-based property listing website for browsing and viewing propertie
 - Adonis
 - Julius
 - Mark
-- Suneya
 - Esther
+- Suneya
+
+## License
+
+This project is private and not licensed for public use.
