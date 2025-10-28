@@ -93,9 +93,9 @@ export default function HomePage() {
       <Navbar properties={properties} onSearch={handleSearch} />
 
       <div className="main-content" style={{ display: "flex" }}>
-        {/* <aside className="sidebar">
+        <aside className="sidebar">
           <Filter onFilterChange={handleFilterChange} />
-        </aside> */}
+        </aside>
 
         <main className="properties-area">
           {filteredProperties.length > 0 ? (
