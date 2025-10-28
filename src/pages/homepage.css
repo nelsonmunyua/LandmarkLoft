@@ -1,4 +1,9 @@
 /* Container for the whole page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .homepage-container {
   display: flex;
   flex-direction: column;
@@ -34,7 +39,7 @@
 .property-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 per row */
-  gap: 24px;
+  gap: 12px;
 }
 
 /* Property card styling */
