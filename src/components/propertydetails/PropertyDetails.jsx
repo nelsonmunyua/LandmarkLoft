@@ -1,62 +1,109 @@
-import React from "react";
-import "./style.css";
-import { Heart, Share2, BedDouble, Bath, Car, Ruler } from "lucide-react";
-import PropertyCard from "../propertcard/PropertyCard";
+import React, { useState, useEffect }from "react";
+import { useParams, Link } from "react-router-dom";
+import {
+  BedDouble,
+  Bath,
+  Ruler,
+  Heart,
+  Share2,
+  ArrowLeft,
+} from "lucide-react";
 
-export default function PropertyDetails({ properties }) {
+import "./propertydetails.css";
+
+export default function PropertyDetails() {
+  // useState below fetches the property details
+  const [propertyDetails, setPropertyDetails] = useState(null);
+  const { id } = useParams();
+
+  useEffect(() => {
+    fetch("http://localhost:3000/properties")
+    .then((res) => res.json())
+    .then((data) => {
+      const property = data.find((p) => p.id === parseInt(id));
+      setPropertyDetails(property);
+    })
+    .catch((error) => {
+      console.error("Error fetching Property Details", error);
+    });
+  }, [id]); // the id dependancy makes the this useEffect run whenever the id changes
+
+
+  if (!PropertyDetails) {
+    return (
+      <div className="property-details-container">
+        <p>Property not found.</p>
+        <Link to="/" className="back-btn">
+          ← Back to Listings
+        </Link>
+      </div>
+    );
+  }
+
   return (
-    <div className="details-card">
-      {/* LEFT SIDE */}
-      <div className="details-section">
-        {/* Main image */}
-        <div className="main-image-wrapper">
-          <img src={properties.image} alt={properties.tittle}/>
-          <span className="status-badge">Under Contract</span>
-          <button className="view-photos">View all 12 Photos</button>
+    <div className="property-details-container">
+      {/* Back button */}
+      <Link to="/" className="back-btn">
+        <ArrowLeft size={18} /> Back to Listings
+      </Link>
+
+      <div className="property-details-card">
+        {/* IMAGE SECTION */}
+        <div className="details-image-section">
+          <img
+            src={propertyDetails?.image}
+            alt={propertyDetails?.title}
+            className="details-main-image"
+          />
+          <span className={`property-badge ${propertyDetails?.type}`}>
+            {propertyDetails?.type}
+          </span>
+          {propertyDetails?.project && (
+            <span className="property-project">{propertyDetails?.project}</span>
+          )}
         </div>
 
-        {/* Property info section */}
-        <div className="sub-details-div">
-          <div className="details-left">
-            <img
-              src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=200&q=80"
-              alt="details thumbnail"
-            />
+        {/* INFO SECTION */}
+        <div className="details-info-section">
+          <h1 className="details-title">{propertyDetails?.title}</h1>
+          <p className="details-location">{propertyDetails?.location}</p>
 
-            <div className="details-description">
-              <h2>$1,200,000</h2>
-              <p>14 Kilimani, Nairobi</p>
-
-              <div className="details-icons">
-                <div><BedDouble size={18}/> 4</div>
-                <div><Bath size={18}/> 2</div>
-                <div><Car size={18}/> 3</div>
-                <div><Ruler size={18}/> 101 m²</div>
-              </div>
+          <div className="details-icons">
+            <div>
+              <BedDouble size={18} /> {propertyDetails?.bedrooms} Beds
+            </div>
+            <div>
+              <Bath size={18} /> {propertyDetails?.bathrooms} Baths
+            </div>
+            <div>
+              <Ruler size={18} /> {propertyDetails?.size_sqm} sqm
             </div>
           </div>
 
-          <div className="details-right">
-            <Heart className="icon" />
-            <Share2 className="icon" />
-          </div>
-        </div>
+          <h2 className="details-price">
+            KSh {propertyDetails?.price.toLocaleString()}
+          </h2>
 
-        {/* Extra info buttons */}
-        <div className="info-buttons">
-          <button>Statement of Info</button>
-          <button>Floor Plan</button>
-          <button>Video</button>
-          <button>3D Tour</button>
-          <button>External Link</button>
+          <p className="details-description">{propertyDetails?.description}</p>
+
+          <div className="details-actions">
+            <button className="details-btn primary">
+              <Heart size={16} /> Save
+            </button>
+            <button className="details-btn secondary">
+              <Share2 size={16} /> Share
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* RIGHT SIDE - MAP */}
+      {/* MAP SECTION */}
       <div className="map-section">
+        <h3>Location Map</h3>
         <img
           src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?auto=format&fit=crop&w=800&q=80"
-          alt="map"
+          alt="Map"
+          className="map-image"
         />
       </div>
     </div>

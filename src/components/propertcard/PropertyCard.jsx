@@ -3,43 +3,53 @@ import "./propertycard.css";
 import { Link } from "react-router-dom";
 
 export default function PropertyCard({ property }) {
-  
+   const {
+    id,
+    image,
+    title,
+    type,
+    location,
+    price,
+    bedrooms,
+    bathrooms,
+    size_sqm,
+    project,
+    description
+  } = property;
+
   return (
     <div className="property-card">
       <div className="property-image">
-        <img src={property.image} alt={property.title} />
-        <span className={`property-badge ${property.type}`}>
-          {property.type}
+        <img src={image} alt={title} />
+        <span className={`property-badge ${type}`}>
+          {type}
         </span>
         {property.project && (
-          <span className="property-project">{property.project}</span>
+          <span className="property-project">{project}</span>
         )}
       </div>
 
       <div className="property-content">
-        <h3 className="property-title">{property.title}</h3>
-        <p className="property-location">{property.location}</p>
+        <h3 className="property-title">{title}</h3>
+        <p className="property-location">{location}</p>
 
         <div className="property-details">
-          <span>🛏 {property.bedrooms} Beds</span>
-          <span>🛁 {property.bathrooms} Baths</span>
-          <span>📏 {property.size_sqm} sqm</span>
+          <span>🛏 {bedrooms} Beds</span>
+          <span>🛁 {bathrooms} Baths</span>
+          <span>📏 {size_sqm} sqm</span>
         </div>
 
-        <p className="property-price">
-          KSh {property.price.toLocaleString()}
-        </p>
+        <p className="property-price">KSh {price.toLocaleString()}</p>
 
-        <p className="property-description">
-          {property.description}
-        </p>
+        <p className="property-description">{description}</p>
 
-         <div className="actions">
-          <Link to="/propertydetails" className="view-details-btn">
+        <div className="actions">
+          <Link to={`property/${id}`} className="view-details-btn">
             View Details
           </Link>
+        </div>
       </div>
-    </div>
     </div>
   );
 }
+// good job  guys

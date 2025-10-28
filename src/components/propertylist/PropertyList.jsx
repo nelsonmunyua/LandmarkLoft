@@ -1,14 +1,19 @@
 import React from "react";
 import "./propertylist.css";
 import PropertyCard from "../propertcard/PropertyCard";
-import properties from "/data/db.json";
 
-export default function PropertyList() {
+
+export default function PropertyList({ properties = [] }) {
+  // Use state to store the array of fetched properties.
+  
+ 
   return (
     <div className="property-list">
-      {properties.map((property) => (
+      {properties.length > 0 ? (properties.map((property) => (
         <PropertyCard key={property.id} property={property} />
-      ))}
+      )) ): (
+        <p>No properties found.</p>
+      )}
     </div>
   );
 }

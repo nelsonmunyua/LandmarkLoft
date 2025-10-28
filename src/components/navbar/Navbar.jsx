@@ -4,9 +4,9 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import SearchBar from "../searchbar/SearchBar";
 
-
-function Navbar() {
+function Navbar({ properties, onSearch }) {
   // Toggle state for the mobile hamburger menu
   const [isOpen, setIsOpen] = useState(false);
 
@@ -18,18 +18,25 @@ function Navbar() {
       {/*Center Section: Links*/}
       <ul className={`nav-links ${isOpen ? "open" : ""}`}>
         <li>
-          <a href="#">For Sale</a>
+          <Link to="/forsale" onClick={() => setIsOpen(false)}>
+            For Sale
+          </Link>
         </li>
         <li>
-          <a href="#">For Rent</a>
+          <Link to="/forrent" onClick={() => setIsOpen(false)}>
+            For Rent
+          </Link>
         </li>
         <li>
-          <a href="#">Projects</a>
+          <Link to="/projects" onClick={() => setIsOpen(false)}>
+            Projects
+          </Link>
         </li>
         <li>
-          <a href="#">Sell</a>
+          <Link to="/sell" onClick={() => setIsOpen(false)}>
+            Sell
+          </Link>
         </li>
-        {/* About link now uses React Router */}
         <li>
           <Link to="/about" onClick={() => setIsOpen(false)}>
             About
@@ -39,7 +46,7 @@ function Navbar() {
 
       {/*Center: Search Bar (desktop only)*/}
       <div className="nav-search">
-        <input type="text" placeholder="Search by location or price..." />
+        <SearchBar properties={properties} onSearch={onSearch} />
       </div>
 
       {/*Right Section: User Profile*/}
