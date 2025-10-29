@@ -120,7 +120,7 @@ export default function Sell() {
         <input
           type="number"
           name="price"
-          placeholder="Price (USD)"
+          placeholder="Price (Ksh)"
           value={formData.price}
           onChange={handleChange}
           required
@@ -178,7 +178,7 @@ export default function Sell() {
                 <td>{property.title}</td>
                 <td>{property.type}</td>
                 <td>{property.location}</td>
-                <td>${property.price}</td>
+                <td>Ksh{property.price}</td>
                 <td>
                   <button onClick={() => handleEdit(property)}>Edit</button>
                   <button
