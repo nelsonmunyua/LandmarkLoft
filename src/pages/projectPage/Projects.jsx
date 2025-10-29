@@ -7,7 +7,8 @@ const Projects = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:3000/properties")
+    const apiUrl = import.meta.env.VITE_API_URL;
+    fetch(`${apiUrl}/properties`)
       .then((res) => res.json())
       .then((data) => {
         const filtered = data.filter((item) => item.category === "project");

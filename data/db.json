@@ -1,20 +1,6 @@
 {
   "properties": [
     {
-      "id": 2,
-      "title": "2 Bedroom Flat for Rent",
-      "type": "rent",
-      "category": "flat",
-      "project": "Existing",
-      "location": "Kilimani, Nairobi",
-      "price": 45000,
-      "bedrooms": 2,
-      "bathrooms": 1,
-      "size_sqm": 80,
-      "description": "Fully furnished, close to schools",
-      "image": "https://images.unsplash.com/photo-1615529182904-14819c35db37?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvbWUlMjBpbnRlcmlvcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=500"
-    },
-    {
       "id": 3,
       "title": "4 Bedroom Bungalow for Sale",
       "type": "sale",
@@ -707,6 +693,17 @@
       "size_sqm": "500",
       "image": "https://imgs.search.brave.com/VGVaY4G_x6I-QdfBE6c1-b2rDkRuM2lzjAxxZ3NZZwY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTM2/MzgxNzUzNy9waG90/by9sdXh1cnktbW9k/ZXJuLWhvdXNlLWlu/dGVyaW9yLXdpdGgt/Y29ybmVyLXNvZmEt/Ym9va3NoZWxmLWFu/ZC1zdGFpcmNhc2Uu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PUJZOUV2cmdMX1Zz/UWtUa2V0bmNlMHl2/OWxURXB2WmtWdzBZ/OU5rTW94Tjg9",
       "id": 52
+    },
+    {
+      "title": "ggg",
+      "type": "Office",
+      "location": "Westlands, Nairobi",
+      "price": "23300",
+      "bedrooms": "3",
+      "bathrooms": "4",
+      "size_sqm": "45",
+      "image": "https://imgs.search.brave.com/grtp4FJoai7nbkgf41Nf8nYs4BEkM4OfLpckxiSMb-U/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTE0/Mjc0NzU0OC9waG90/by9tb2Rlcm4taG91/c2UtaW50ZXJpb3It/ZGVzaWduLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz12cWg1/Q3gweE1wOW1aZk1Q/T1ViaXZPUTl2MldM/TjA3Zy1ndVZTNk1z/amFZPQ",
+      "id": 53
     }
   ]
 }

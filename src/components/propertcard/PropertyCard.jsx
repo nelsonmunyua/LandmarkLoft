@@ -3,7 +3,7 @@ import "./propertycard.css";
 import { Link } from "react-router-dom";
 
 export default function PropertyCard({ property }) {
-   const {
+  const {
     id,
     image,
     title,
@@ -14,16 +14,14 @@ export default function PropertyCard({ property }) {
     bathrooms,
     size_sqm,
     project,
-    description
+    description,
   } = property;
 
   return (
     <div className="property-card">
       <div className="property-image">
         <img src={image} alt={title} />
-        <span className={`property-badge ${type}`}>
-          {type}
-        </span>
+        <span className={`property-badge ${type}`}>{type}</span>
         {property.project && (
           <span className="property-project">{project}</span>
         )}

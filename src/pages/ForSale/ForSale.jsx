@@ -8,7 +8,8 @@ const ForSale = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:3000/properties")
+    const apiUrl = import.meta.env.VITE_API_URL;
+    fetch(`${apiUrl}/properties`)
       .then((res) => res.json())
       .then((data) => {
         const sales = data.filter((item) => item.type === "sale");
@@ -26,9 +27,7 @@ const ForSale = () => {
 
       <div className="property-grid">
         {properties.map((property) => (
-          
-          <PropertyCard key={property.id} property={property}/>
-
+          <PropertyCard key={property.id} property={property} />
         ))}
       </div>
     </div>

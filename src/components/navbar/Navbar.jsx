@@ -13,7 +13,7 @@ function Navbar({ properties, onSearch }) {
   return (
     <nav className="navbar">
       {/*Left Section: Logo */}
-      <div className="nav-logo">Urbanün</div>
+      <div className="nav-logo">LandmarkLoft</div>
 
       {/*Center Section: Links*/}
       <ul className={`nav-links ${isOpen ? "open" : ""}`}>

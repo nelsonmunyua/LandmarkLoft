@@ -40,7 +40,7 @@ const routes = createBrowserRouter([
   },
   {
     path: "/forrent/property/:id",
-    element: <PropertyDetails />
+    element: <PropertyDetails />,
   },
   {
     path: "/projects",

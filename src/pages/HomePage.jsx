@@ -11,7 +11,8 @@ export default function HomePage() {
 
   // Fetch all properties on mount
   useEffect(() => {
-    fetch("http://localhost:3000/properties")
+    const apiUrl = import.meta.env.VITE_API_URL;
+    fetch(`${apiUrl}/properties`)
       .then((res) => res.json())
       .then((data) => {
         setProperties(data);
@@ -33,9 +34,7 @@ export default function HomePage() {
 
     // Property Type Filter
     if (filters.propertyType.length > 0) {
-      results = results.filter((p) =>
-        filters.propertyType.includes(p.type)
-      );
+      results = results.filter((p) => filters.propertyType.includes(p.type));
     }
 
     // Property Category Filter
@@ -70,9 +69,9 @@ export default function HomePage() {
     }
 
     // Custom Price Range (slider)
-    results = results.filter(
-      (p) => p.price >= filters.minPrice && p.price <= filters.maxPrice
-    );
+    // results = results.filter(
+    //   (p) => p.price >= filters.minPrice && p.price <= filters.maxPrice
+    // );
 
     // If no filters selected, show all
     if (
@@ -94,7 +93,7 @@ export default function HomePage() {
 
       <div className="main-content" style={{ display: "flex" }}>
         <aside className="sidebar">
-          <Filter onFilterChange={handleFilterChange} />
+          <Filter properties={properties} onFilterChange={handleFilterChange} />
         </aside>
 
         <main className="properties-area">

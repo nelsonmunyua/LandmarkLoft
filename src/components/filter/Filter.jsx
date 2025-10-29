@@ -1,37 +1,37 @@
-import { useState } from 'react';
-import './filter.css';
+import { useState } from "react";
+import "./filter.css";
 
 const Filter = ({ onFilterChange }) => {
   const [filters, setFilters] = useState({
     propertyType: [],
     propertyCategory: [],
-    priceRange: '',
+    priceRange: "",
     minPrice: 400000,
-    maxPrice: 800000
+    maxPrice: 800000,
   });
 
-  const propertyTypes = ['rent', 'sale'];
+  const propertyTypes = ["rent", "sale"];
 
   const propertyCategory = [
-    'flat',
-    'bungalow',
-    'apartment',
-    'mansion',
-    'house',
-    'commercial',
-    'farm house'
+    "flat",
+    "bungalow",
+    "apartment",
+    "mansion",
+    "house",
+    "commercial",
+    "farm house",
   ];
 
   const priceRanges = [
-    'Under ksh 200000',
-    'Ksh 200000 - Ksh 500000',
-    'Ksh 500000 - ksh 1M',
-    '> Ksh 1M'
+    "Under ksh 200000",
+    "Ksh 200000 - Ksh 500000",
+    "Ksh 500000 - ksh 1M",
+    "> Ksh 1M",
   ];
 
   const handlePropertyTypeChange = (type) => {
     const newTypes = filters.propertyType.includes(type)
-      ? filters.propertyType.filter(t => t !== type)
+      ? filters.propertyType.filter((t) => t !== type)
       : [...filters.propertyType, type];
 
     const newFilters = { ...filters, propertyType: newTypes };
@@ -41,7 +41,7 @@ const Filter = ({ onFilterChange }) => {
 
   const handlePropertyCategoryChange = (category) => {
     const newCategory = filters.propertyCategory.includes(category)
-      ? filters.propertyCategory.filter(c => c !== category)
+      ? filters.propertyCategory.filter((c) => c !== category)
       : [...filters.propertyCategory, category];
 
     const newFilters = { ...filters, propertyCategory: newCategory };
@@ -142,7 +142,9 @@ const Filter = ({ onFilterChange }) => {
               max="1000000"
               step="10000"
               value={filters.minPrice}
-              onChange={(e) => handlePriceSliderChange('minPrice', e.target.value)}
+              onChange={(e) =>
+                handlePriceSliderChange("minPrice", e.target.value)
+              }
             />
             <input
               type="range"
@@ -150,7 +152,9 @@ const Filter = ({ onFilterChange }) => {
               max="1000000"
               step="10000"
               value={filters.maxPrice}
-              onChange={(e) => handlePriceSliderChange('maxPrice', e.target.value)}
+              onChange={(e) =>
+                handlePriceSliderChange("maxPrice", e.target.value)
+              }
             />
           </div>
         </div>
@@ -163,9 +167,9 @@ const Filter = ({ onFilterChange }) => {
             const resetFilters = {
               propertyType: [],
               propertyCategory: [],
-              priceRange: '',
+              priceRange: "",
               minPrice: 400000,
-              maxPrice: 800000
+              maxPrice: 800000,
             };
             setFilters(resetFilters);
             onFilterChange?.(resetFilters);

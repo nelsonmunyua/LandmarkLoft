@@ -3,13 +3,13 @@ import "./ForRent.css";
 import PropertyCard from "../../components/propertcard/PropertyCard";
 import { useNavigate } from "react-router-dom";
 
-
 const ForRent = () => {
   const [properties, setProperties] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:3000/properties")
+    const apiUrl = import.meta.env.VITE_API_URL;
+    fetch(`${apiUrl}/properties`)
       .then((res) => res.json())
       .then((data) => {
         const rentProps = data.filter((item) => item.type === "rent");
@@ -27,7 +27,7 @@ const ForRent = () => {
 
       <div className="property-grid">
         {properties.map((property) => (
-         <PropertyCard key={property.id} property={property} />
+          <PropertyCard key={property.id} property={property} />
         ))}
       </div>
     </div>

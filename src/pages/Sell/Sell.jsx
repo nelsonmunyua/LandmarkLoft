@@ -15,6 +15,8 @@ export default function Sell() {
   });
   const [editId, setEditId] = useState(null);
 
+  const apiUrl = import.meta.env.VITE_API_URL; // base URL from env
+
   // Fetch all properties on mount
   useEffect(() => {
     fetchProperties();
@@ -22,7 +24,7 @@ export default function Sell() {
 
   const fetchProperties = async () => {
     try {
-      const res = await fetch("http://localhost:3000/properties");
+      const res = await fetch(`${apiUrl}/properties`);
       const data = await res.json();
       setProperties(data);
     } catch (error) {
@@ -39,42 +41,44 @@ export default function Sell() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (editId) {
-      // Update existing property
-      await fetch(`http://localhost:3000/properties/${editId}`, {
-        method: "PUT",
+    const endpoint = editId
+      ? `${apiUrl}/properties/${editId}`
+      : `${apiUrl}/properties`;
+    const method = editId ? "PUT" : "POST";
+
+    try {
+      await fetch(endpoint, {
+        method: method,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
       setEditId(null);
-    } else {
-      // Create new property
-      await fetch("http://localhost:3000/properties", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+      setFormData({
+        title: "",
+        type: "",
+        location: "",
+        price: "",
+        bedrooms: "",
+        bathrooms: "",
+        size_sqm: "",
+        image: "",
       });
+      fetchProperties();
+    } catch (error) {
+      console.error("Error submitting property:", error);
     }
-
-    setFormData({
-      title: "",
-      type: "",
-      location: "",
-      price: "",
-      bedrooms: "",
-      bathrooms: "",
-      size_sqm: "",
-      image: "",
-    });
-    fetchProperties();
   };
 
   // Delete property
   const handleDelete = async (id) => {
-    await fetch(`http://localhost:3000/properties/${id}`, {
-      method: "DELETE",
-    });
-    fetchProperties();
+    try {
+      await fetch(`${apiUrl}/properties/${id}`, {
+        method: "DELETE",
+      });
+      fetchProperties();
+    } catch (error) {
+      console.error("Error deleting property:", error);
+    }
   };
 
   // Edit property

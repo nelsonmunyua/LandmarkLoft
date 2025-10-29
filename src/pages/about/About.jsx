@@ -75,7 +75,7 @@ const About = () => {
           </div>
           <div className="team-member">
             <img
-              src="https://randomuser.me/api/portraits/men/47.jpg" 
+              src="https://randomuser.me/api/portraits/men/47.jpg"
               alt="Team member"
             />
             <h3>Julius</h3>

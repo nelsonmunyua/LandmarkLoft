@@ -1,13 +1,6 @@
-import React, { useState, useEffect }from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import {
-  BedDouble,
-  Bath,
-  Ruler,
-  Heart,
-  Share2,
-  ArrowLeft,
-} from "lucide-react";
+import { BedDouble, Bath, Ruler, Heart, Share2, ArrowLeft } from "lucide-react";
 
 import "./propertydetails.css";
 
@@ -17,17 +10,17 @@ export default function PropertyDetails() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch("http://localhost:3000/properties")
-    .then((res) => res.json())
-    .then((data) => {
-      const property = data.find((p) => p.id === parseInt(id));
-      setPropertyDetails(property);
-    })
-    .catch((error) => {
-      console.error("Error fetching Property Details", error);
-    });
+    const apiUrl = import.meta.env.VITE_API_URL;
+    fetch(`${apiUrl}/properties`)
+      .then((res) => res.json())
+      .then((data) => {
+        const property = data.find((p) => p.id === parseInt(id));
+        setPropertyDetails(property);
+      })
+      .catch((error) => {
+        console.error("Error fetching Property Details", error);
+      });
   }, [id]); // the id dependancy makes the this useEffect run whenever the id changes
-
 
   if (!PropertyDetails) {
     return (
