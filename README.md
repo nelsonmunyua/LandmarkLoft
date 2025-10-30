@@ -1,45 +1,155 @@
-# LandmarkLoft
+# 🏠 LaandmarkLoft — Real Estate Listing Platform
 
-A modern React-based property listing website for browsing and viewing properties in Nairobi, Kenya. Built with Vite for fast development and optimized performance.
+A modern **React-based real estate web app** for browsing, filtering, and managing property listings.  
+It features search, dynamic filters, CRUD operations for properties, and a responsive design for both desktop and mobile users.
 
-## Features
+---
 
-- **Property Listings**: Browse a variety of properties including apartments, houses, bungalows, and commercial spaces.
-- **Filtering**: Filter properties by type (sale/rent), category, location, and other criteria.
-- **Property Details**: View detailed information about each property, including images, descriptions, and specifications.
-- **Responsive Design**: Optimized for desktop and mobile devices.
-- **Routing**: Seamless navigation between pages using React Router.
+## 🚀 Features
 
-## Tech Stack
+✅ **Property Listings**
+- Displays all properties fetched from a JSON server or backend API.  
+- Each property has an image, price, location, type, and description.
 
-- **Frontend**: React 19.1.1
-- **Routing**: React Router DOM 7.9.4
-- **Icons**: Lucide React 0.546.0
-- **Build Tool**: Vite 7.1.7
-- **Linting**: ESLint 9.36.0
-- **Styling**: CSS (custom stylesheets)
+✅ **Dynamic Filtering**
+- Filter by property type, price range, and custom price slider.
+- Instant re-render of matching properties without page reload.
 
-- **React**: ^19.1.1
-- **React DOM**: ^19.1.1
-- **React Router DOM**: ^7.9.4
-- **Lucide React**: ^0.546.0
+✅ **Search Functionality**
+- Real-time search in the navigation bar.
+- Search by property name, type, or location.
 
-## Dev Dependencies
+✅ **CRUD Operations**
+- Add, edit, and delete properties easily (coming soon in `/sell` component).
 
-- **Vite**: ^7.1.7
-- **ESLint**: ^9.36.0
-- **@vitejs/plugin-react**: ^5.0.4
-- And more...
+✅ **Routing**
+- Navigation handled by React Router (`react-router-dom`).
+- Routes include Home, For Sale, For Rent, Projects, Sell, and About pages.
 
-## Contributors
+✅ **Responsive Navbar**
+- Hamburger menu for mobile devices.
+- Integrated search bar and user avatar.
 
-- Nelson
-- Adonis
-- Julius
-- Mark
-- Esther
-- Suneya
+---
 
-## License
+## 🧱 Project Structure
 
-This project is private and not licensed for public use.
+landmarkloft/
+├── public/
+├── src/
+│ ├── components/
+│ │ ├── navbar/ → Navigation bar with search
+│ │ ├── filter/ → Sidebar filter component
+│ │ ├── propertylist/ → Displays filtered property cards
+│ │ ├── propertydetails/ → Individual property details
+│ │ ├── propertycard/ → UI card for each property
+│ ├── pages/
+│ │ ├── HomePage.jsx → Main homepage
+│ │ ├── ForSale.jsx
+│ │ ├── ForRent.jsx
+│ │ ├── Projects.jsx
+│ │ ├── Sell.jsx
+│ │ └── about/
+│ │ └── About.jsx
+│ ├── App.jsx
+│ ├── main.jsx → Entry point (React Router setup)
+│ ├── styles/ → CSS files
+│ └── ...
+├── db.json → Sample JSON data (for json-server)
+├── package.json
+└── README.md
+
+yaml
+Copy code
+
+---
+
+## ⚙️ Tech Stack
+
+| Technology | Purpose |
+|-------------|----------|
+| **React.js (Vite)** | Frontend framework |
+| **React Router DOM** | Page routing |
+| **JSON Server / REST API** | Mock backend data |
+| **CSS / Flexbox / Grid** | Responsive UI design |
+| **Fetch API** | Data fetching |
+| **Vercel / Netlify** | Deployment |
+
+---
+
+## 🧑‍💻 Getting Started
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/nelsonmunyua/lamdmarkloft.git
+cd landmarkloft
+2️⃣ Install Dependencies
+bash
+Copy code
+npm install
+3️⃣ Run JSON Server (Mock Backend)
+Make sure you have a db.json file containing properties data.
+Start JSON Server on port 3000:
+
+bash
+Copy code
+npx json-server --watch db.json --port 3000
+4️⃣ Run the React App
+bash
+Copy code
+npm run dev
+App will be available at:
+👉 http://localhost:5173
+
+🌐 Deployment
+To deploy on Vercel or Netlify:
+
+Push your code to GitHub.
+
+Connect your repo to Vercel.
+
+Add your backend API or JSON server base URL in .env file:
+
+ini
+Copy code
+VITE_API_BASE_URL=https://landmarkloft-backend-production.up.railway.app
+Update all fetch requests to use:
+
+Below is the link to the backend repo of this project 
+https://github.com/nelsonmunyua/LandmarkLoft-backend
+
+js
+Copy code
+fetch(`${import.meta.env.VITE_API_BASE_URL}/properties`)
+🧩 Upcoming Features
+📝 AddProperty component (full CRUD)
+
+💾 Persistent favorites / wishlist
+
+🧭 Map view integration (Google Maps)
+
+🔐 Authentication (Admin dashboard)
+
+📱 Enhanced mobile UI
+
+👨‍💻 Author
+Nelson Munyua
+💼 Software Developer | 🌍 Nairobi, Kenya
+📧 nelsonmunyua8@gmail.com
+🔗 GitHub
+Adonis Bingirimana
+Julius Mwendwa
+Mark Guto
+Esther Nekesa
+Suneya Hirsi
+
+📜 License
+This project is licensed under the MIT License — feel free to use and modify for your own projects.
+
+“Turning spaces into homes — one line of code at a time.” 🏡
+
+yaml
+Copy code
+
+---
