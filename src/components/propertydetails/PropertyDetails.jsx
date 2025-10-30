@@ -79,14 +79,14 @@ export default function PropertyDetails() {
 
           <p className="details-description">{propertyDetails?.description}</p>
 
-          <div className="details-actions">
+          {/* <div className="details-actions">
             <button className="details-btn primary">
               <Heart size={16} /> Save
             </button>
             <button className="details-btn secondary">
               <Share2 size={16} /> Share
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
 
