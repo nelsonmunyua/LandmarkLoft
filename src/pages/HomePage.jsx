@@ -3,6 +3,7 @@ import Navbar from "../components/navbar/Navbar";
 import Filter from "../components/filter/Filter";
 import PropertyList from "../components/propertylist/PropertyList";
 import "./homepage.css";
+// import "./..app.css"
 
 export default function HomePage() {
   const [properties, setProperties] = useState([]);

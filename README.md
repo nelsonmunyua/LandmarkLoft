@@ -34,7 +34,7 @@ It features search, dynamic filters, CRUD operations for properties, and a respo
 
 ## 🧱 Project Structure
 
-landmarkloft/
+|landmarkloft/
 ├── public/
 ├── src/
 │ ├── components/
